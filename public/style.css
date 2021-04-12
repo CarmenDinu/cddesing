@@ -1,0 +1,404 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 17px;
+}
+body {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Source Code Pro", monospace;
+}
+
+/* -------------------Carousel-------------------- */
+
+.carousel-container {
+  border-top: solid black 150px !important;
+  padding: 0;
+}
+#carousel-area {
+  min-height: 450px;
+  background-image: url(Images/blackhole.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.carousel-container {
+  border-top: solid black 150px !important;
+  padding: 0;
+}
+
+#startingText {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 27px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* -------------------Skills-------------------- */
+
+.skill-bars {
+  padding: 25px 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: black;
+}
+.skill-bars .bar {
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child {
+  margin-top: 0px;
+}
+.skill-bars .bar .info {
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span {
+  font-weight: 900;
+  font-size: 26px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line {
+  height: 15px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+    0 1px rgba(255, 255, 255, 0.8);
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span {
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #6665ee;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.bar .progress-line.html span {
+  width: 95%;
+}
+.bar .progress-line.css span {
+  width: 80%;
+}
+.bar .progress-line.javascript span {
+  width: 70%;
+}
+.bar .progress-line.bootstrap span {
+  width: 80%;
+}
+.bar .progress-line.react span {
+  width: 50%;
+}
+.progress-line span::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100% {
+    opacity: 1;
+  }
+}
+.progress-line.html span::after {
+  content: "95%";
+}
+.progress-line.css span::after {
+  content: "80%";
+}
+.progress-line.javascript span::after {
+  content: "70%";
+}
+.progress-line.bootstrap span::after {
+  content: "80%";
+}
+.progress-line.react span::after {
+  content: "50%";
+}
+
+/* -------------------Experience-------------------- */
+.card-img-top {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: black !important;
+}
+.experience-card :hover {
+  box-sizing: border-box;
+  border: 15px solid rgba(255, 255, 255, 0.5);
+}
+
+.card-body:hover,
+.card-title:hover,
+.card-text:hover,
+.exp-btn {
+  border: 0 !important;
+}
+
+/* -------------------Languages-------------------- */
+.languages {
+  padding: 25px 30px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: black;
+}
+
+.lang {
+  font-weight: 900;
+  font-size: 26px;
+  border-radius: 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* -------------------Footer-------------------- */
+
+.footer {
+  background-color: #343a40;
+}
+.footer-fa {
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-name {
+  color: rgba(255, 255, 255, 0.5);
+}
+/* -------------------Buttons-------------------- */
+
+/* -------------------Media queries-------------------- */
+/* // X-Small devices (portrait phones, less than 576px)
+// Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  #main-items {
+    font-size: 30px !important;
+  }
+  /* -------------------Languages-------------------- */
+  .languages {
+    padding: 5px 5px;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: black;
+  }
+
+  .lang {
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 20px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  /* -------------------Skills-------------------- */
+
+  .skill-bars {
+    padding: 15px 15px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: black;
+  }
+  .skill-bars .bar {
+    margin: 20px 0;
+  }
+  .skill-bars .bar:first-child {
+    margin-top: 0px;
+  }
+  .skill-bars .bar .info {
+    margin-bottom: 5px;
+  }
+  .skill-bars .bar .info span {
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100% {
+      opacity: 1;
+    }
+  }
+  .skill-bars .bar .progress-line {
+    height: 15px;
+    width: 270px;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+      0 1px rgba(255, 255, 255, 0.8);
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+  @keyframes animate {
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  .bar .progress-line span {
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #6665ee;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+  .bar .progress-line.html span {
+    width: 95%;
+  }
+  .bar .progress-line.css span {
+    width: 80%;
+  }
+  .bar .progress-line.javascript span {
+    width: 70%;
+  }
+  .bar .progress-line.bootstrap span {
+    width: 80%;
+  }
+  .bar .progress-line.react span {
+    width: 50%;
+  }
+  .progress-line span::before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100% {
+      opacity: 1;
+    }
+  }
+  .progress-line.html span::after {
+    content: "95%";
+  }
+  .progress-line.css span::after {
+    content: "80%";
+  }
+  .progress-line.javascript span::after {
+    content: "70%";
+  }
+  .progress-line.bootstrap span::after {
+    content: "80%";
+  }
+  .progress-line.react span::after {
+    content: "50%";
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  ...;
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+@media (max-width: 1200px) {
+  .pr-1 {
+    visibility: hidden !important;
+  }
+}
+
+#details {
+  visibility: hidden;
+  position: absolute;
+
+  height: 100vh;
+}
+#details1 {
+  visibility: hidden;
+  position: absolute;
+
+  height: 100vh;
+}
+
+#details2 {
+  visibility: hidden;
+  position: absolute;
+
+  height: 100vh;
+}
+
+#details3 {
+  visibility: hidden;
+  position: absolute;
+
+  height: 100vh;
+}
