@@ -2,18 +2,26 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  font-size: 17px;
+  font-size: 15px;
 }
 body {
   background-color: black;
   color: rgba(255, 255, 255, 0.5);
   font-family: "Source Code Pro", monospace;
 }
+.fa-icons {
+  font-size: 30px;
+}
+/* -------------------NavBar-------------------- */
+.navbar-toggler-icon {
+  width: 1.8em;
+  height: 1.8em;
+}
 
 /* -------------------Carousel-------------------- */
 
 .carousel-container {
-  border-top: solid black 150px !important;
+  border-top: solid black 120px !important;
   padding: 0;
 }
 #carousel-area {
@@ -32,8 +40,161 @@ body {
 #startingText {
   white-space: nowrap;
   overflow: hidden;
-  font-size: 27px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* -------------------Education-------------------- */
+.education-container {
+  background: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d1e31, #111);
+  overflow: hidden;
+}
+
+.night {
+  position: absolute; /* position: relative; */
+
+  height: 100%;
+  transform: rotateZ(40deg);
+}
+
+.star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 4px;
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 3s ease-in-out infinite, falling 3s ease-in-out infinite;
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    #5f91ff,
+    rgba(0, 0, 255, 0)
+  );
+  border-radius: 100%;
+  transform: translateX(50%) rotateZ(45deg);
+  animation: shining 3s ease-in-out infinite;
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.star::after {
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+.star:nth-child(1) {
+  top: calc(50% - 100px);
+  left: calc(50% - 250px);
+  animation-delay: 1s;
+}
+
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+  animation-delay: 1s;
+}
+
+.star:nth-child(2) {
+  top: calc(50% - 50px);
+  left: calc(50% - 200px);
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(3) {
+  top: calc(50% - 0px);
+  left: calc(50% - 150px);
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(4) {
+  top: calc(50% - -50px);
+  left: calc(50% - 200px);
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(5) {
+  top: calc(50% - -100px);
+  left: calc(50% - 250px);
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+  animation-delay: 1.8s;
+}
+
+/* -------------------Portfolio-------------------- */
+#portfolioContent {
+  background-image: url(Images/850px-Milky_Way_Arch.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  border: 1px solid white;
+}
+h5 {
+  font-weight: bolder;
 }
 
 /* -------------------Skills-------------------- */
@@ -57,7 +218,7 @@ body {
 }
 .skill-bars .bar .info span {
   font-weight: 900;
-  font-size: 26px;
+  font-size: 17px;
   opacity: 0;
   animation: showText 0.5s 1s linear forwards;
 }
@@ -67,7 +228,7 @@ body {
   }
 }
 .skill-bars .bar .progress-line {
-  height: 15px;
+  height: 5px;
   width: 100%;
   background: #f0f0f0;
   position: relative;
@@ -165,20 +326,22 @@ body {
 .card-body {
   background-color: black !important;
 }
+
+.modal,
+.modal-body {
+  color: black;
+  box-sizing: border-box !important;
+}
 .experience-card :hover {
-  box-sizing: border-box;
-  border: 15px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 8px 8px 8px #7c858f;
 }
 
-.card-body:hover,
-.card-title:hover,
-.card-text:hover,
-.exp-btn {
-  border: 0 !important;
+.card-img-top,
+.card-body :hover {
+  box-shadow: none;
 }
-
 /* -------------------Languages-------------------- */
-.languages {
+.languagesContent {
   padding: 25px 30px;
   width: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -189,10 +352,19 @@ body {
 
 .lang {
   font-weight: 900;
-  font-size: 26px;
+  font-size: 17px;
   border-radius: 20px;
   color: black;
   background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* -------------------Contact-------------------- */
+
+#map {
+  width: 100%;
+  height: 350px;
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 /* -------------------Footer-------------------- */
@@ -207,198 +379,110 @@ body {
 .footer-name {
   color: rgba(255, 255, 255, 0.5);
 }
-/* -------------------Buttons-------------------- */
 
+#main-items {
+  font-size: 25px !important;
+}
+
+/* -------------------Multiple elements style-------------------- */
+
+/* effect-shine */
+h1.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
 /* -------------------Media queries-------------------- */
+
 /* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
 // Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
   #main-items {
-    font-size: 30px !important;
+    text-align: left !important;
+    font-size: 20px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
   }
-  /* -------------------Languages-------------------- */
-  .languages {
-    padding: 5px 5px;
-    width: 200px;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    color: black;
-  }
-
-  .lang {
-    font-weight: 600;
+  #startingText {
     font-size: 20px;
-    border-radius: 20px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5) !important;
-  }
-
-  /* -------------------Skills-------------------- */
-
-  .skill-bars {
-    padding: 15px 15px;
-    width: 300px;
-    background: #fff;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    color: black;
-  }
-  .skill-bars .bar {
-    margin: 20px 0;
-  }
-  .skill-bars .bar:first-child {
-    margin-top: 0px;
-  }
-  .skill-bars .bar .info {
-    margin-bottom: 5px;
   }
   .skill-bars .bar .info span {
-    font-weight: 600;
-    font-size: 15px;
-    opacity: 0;
-    animation: showText 0.5s 1s linear forwards;
+    font-size: 17px;
   }
-  @keyframes showText {
-    100% {
-      opacity: 1;
-    }
+  .pr-5 {
+    margin-left: 0;
   }
-  .skill-bars .bar .progress-line {
-    height: 15px;
-    width: 270px;
-    background: #f0f0f0;
-    position: relative;
-    transform: scaleX(0);
-    transform-origin: left;
-    border-radius: 10px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
-      0 1px rgba(255, 255, 255, 0.8);
-    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+
+  /* -------------------Education-------------------- */
+  #education {
+    margin: 10px !important;
   }
-  @keyframes animate {
-    100% {
-      transform: scaleX(1);
-    }
+  /* -------------------Portfolio-------------------- */
+  #portfolioContent {
+    margin: 1px;
   }
-  .bar .progress-line span {
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-    transform: scaleX(0);
-    transform-origin: left;
-    background: #6665ee;
-    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  /* -------------------Skills-------------------- */
+  .skill-bars {
+    width: 90%;
   }
-  .bar .progress-line.html span {
-    width: 95%;
+
+  /* -------------------Contact-------------------- */
+
+  .contact-information {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 30px;
+    margin-left: 20px;
   }
-  .bar .progress-line.css span {
-    width: 80%;
-  }
-  .bar .progress-line.javascript span {
-    width: 70%;
-  }
-  .bar .progress-line.bootstrap span {
-    width: 80%;
-  }
-  .bar .progress-line.react span {
-    width: 50%;
-  }
-  .progress-line span::before {
-    position: absolute;
-    content: "";
-    top: -10px;
-    right: 0;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-bottom-width: 0px;
-    border-right-width: 0px;
-    border-top-color: #000;
-    opacity: 0;
-    animation: showText2 0.5s 1.5s linear forwards;
-  }
-  .progress-line span::after {
-    position: absolute;
-    top: -28px;
-    right: 0;
-    font-weight: 500;
-    background: #000;
-    color: #fff;
-    padding: 1px 8px;
-    font-size: 12px;
-    border-radius: 3px;
-    opacity: 0;
-    animation: showText2 0.5s 1.5s linear forwards;
-  }
-  @keyframes showText2 {
-    100% {
-      opacity: 1;
-    }
-  }
-  .progress-line.html span::after {
-    content: "95%";
-  }
-  .progress-line.css span::after {
-    content: "80%";
-  }
-  .progress-line.javascript span::after {
-    content: "70%";
-  }
-  .progress-line.bootstrap span::after {
-    content: "80%";
-  }
-  .progress-line.react span::after {
-    content: "50%";
+  #map {
+    margin-left: 20px;
+    width: 90%;
   }
 }
 
-/* // Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
+@media (min-width: 576px) {
+  ...;
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  ...;
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   ...;
 }
-
-/* // X-Large devices (large desktops, 1200px and up) */
+/* 
+// X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-}
-@media (max-width: 1200px) {
-  .pr-1 {
-    visibility: hidden !important;
-  }
+  ...;
 }
 
-#details {
-  visibility: hidden;
-  position: absolute;
-
-  height: 100vh;
-}
-#details1 {
-  visibility: hidden;
-  position: absolute;
-
-  height: 100vh;
-}
-
-#details2 {
-  visibility: hidden;
-  position: absolute;
-
-  height: 100vh;
-}
-
-#details3 {
-  visibility: hidden;
-  position: absolute;
-
-  height: 100vh;
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  ...;
 }
