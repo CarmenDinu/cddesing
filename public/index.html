@@ -20,7 +20,8 @@
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"
+      id="navbar">
       <button
         class="navbar-toggler"
         type="button"
@@ -45,11 +46,12 @@
             <a class="nav-link" href="#portfolio"><i class="fa fa-folder-open
                 pr-1"></i>Portfolio</a>
           </li>
-          <li class="nav-item pr-5">
-            <a class="nav-link" href="#skills"><i class="fa fa-server pr-1"></i>Skills</a>
-          </li>
+
           <li class="nav-item pr-5">
             <a class="nav-link" href="#languages"><i class="fa fa-globe pr-1"></i>Languages</a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="#skills"><i class="fa fa-server pr-1"></i>Skills</a>
           </li>
           <li class="nav-item pr-5">
             <a class="nav-link" href="#contact"><i class="fa fa-envelope pr-1"></i></i>Contact</a>
@@ -481,8 +483,8 @@
       <!-- / Experience -->
 
       <!-- Education -->
-      <div id="education" class="p-md-5 pt-3 m-md-5">
-        <div class="experience-row m-md-3 p-md-5 mb-0 pb-0
+      <div id="education" class="p-md-5 m-md-5">
+        <div class="experience-row pt-5 pb-5 mb-0
           education-container border">
           <div class="night">
             <div class="star"></div>
@@ -525,14 +527,20 @@
 
 
       <!-- Portfolio -->
-      <div class="experience-row pt-md-5 m-md-5 mt-md-5 p-md-5 mb-0 pb-0"
-        id="portfolio">
+      <div class="experience-row p-md-5 m-md-5" id="portfolio">
         <div class="container-fluid">
           <div class="row" id="portfolioContent">
             <h1 class="col-12 mb-2 p-5 text-center effect-shine"
               id="main-items"><i
                 class="fa
                 fa-folder-open mr-3 fa-icons"></i>Portfolio</h1>
+                <div class="col-sm-12 col-md-6 col-lg-4 p-5">
+                  <h5 class="p-3">Weather App</h5>
+                  <a href="https://weather-react-app-ae94c.web.app/" class="btn
+                    btn-primary">See Page</a>
+                  <a href="https://github.com/CarmenDinu/weather" class="btn
+                    btn-primary">See Repository</a>
+                </div>
 
             <div class="col-sm-12 col-md-6 col-lg-4 p-5">
               <h5 class="p-3">Hang Man Game</h5>
@@ -553,13 +561,7 @@
                 btn-primary">See Repository</a>
             </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-4 p-5">
-              <h5 class="p-3">Weather App</h5>
-              <a href="https://weather-react-app-ae94c.web.app/" class="btn
-                btn-primary">See Page</a>
-              <a href="https://github.com/CarmenDinu/weather" class="btn
-                btn-primary">See Repository</a>
-            </div>
+            
 
           </div>
         </div>
@@ -581,17 +583,17 @@
 
 
               <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card p-3 m-5">
+                <div class="card p-1 m-5">
                   <div class="card-body lang">Romanian: Native</div>
                 </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card p-3 m-5">
+                <div class="card p-1 m-5">
                   <div class="card-body lang">English: Professional</div>
                 </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card p-3 m-5">
+                <div class="card p-1 m-5">
                   <div class="card-body lang">French: Professional</div>
                 </div>
               </div>
@@ -679,13 +681,15 @@
                 <h4 class="mr-2 pt-3">Carmen Dinu</h4>
 
                 <h6><i class="fa fa-envelope mr-2"></i>carmenidinu5@gmail.com</h6>
-                <h6><i class="fa fa-phone mr-2"> </i> 00 751 078 868</h6>
+                <a href="tel:00 751 078 868"><i class="fa fa-phone mr-2"> </i>
+                  00 751
+                  078 868</a>
                 <h6>
                   <form
                     action="https://www.linkedin.com/in/carmen-dinu-8a63695b/">
                     <input
                       type="submit"
-                      class="btn btn-light mt-2"
+                      class="btn btn-primary mt-2"
                       value="See LinkedIn Profile"
                       />
                   </form>

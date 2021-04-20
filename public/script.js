@@ -10,10 +10,4 @@ var marker = new google.maps.Marker({
   title: "Hello World!",
 });
 
-// To add the marker to the map, call setMap();
 marker.setMap(map);
-
-// Sets interval...what is transition slide speed?
-// $("#mainCarousel").carousel({
-//   interval: 1500,
-// });
